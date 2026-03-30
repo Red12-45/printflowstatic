@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Printflow | Custom Apparel Studio and Premade Store</title>
+    <meta
+      name="description"
+      content="Printflow lets customers design custom apparel, shop premade drops, check out cleanly, and track every order from payment to delivery."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Clash+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+      <symbol id="icon-star" viewBox="0 0 24 24">
+        <path
+          d="M12 3.5l2.3 4.8 5.2.8-3.8 3.9.9 5.5L12 16.1 7.4 18.5l.9-5.5L4.5 9.1l5.2-.8L12 3.5Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-linejoin="round"
+          stroke-width="1.7"
+        ></path>
+      </symbol>
+
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path
+          d="M5 12h13"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="1.8"
+        ></path>
+        <path
+          d="m13 6 6 6-6 6"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        ></path>
+      </symbol>
+
+      <symbol id="icon-shirt" viewBox="0 0 24 24">
+        <path
+          d="m8.8 4 3.2 2 3.2-2 4 3.2-2 3.8-2-1v10.2H8.8V10l-2 1-2-3.8L8.8 4Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        ></path>
+      </symbol>
+
+      <symbol id="icon-hanger" viewBox="0 0 24 24">
+        <path
+          d="M12 6a2 2 0 1 0-2-2"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        ></path>
+        <path
+          d="M12 6v2l6.7 4.4A2.2 2.2 0 0 1 17.5 16h-11a2.2 2.2 0 0 1-1.2-3.6L12 8"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        ></path>
+      </symbol>
+
+      <symbol id="icon-scissors" viewBox="0 0 24 24">
+        <circle
+          cx="6"
+          cy="7"
+          r="2.3"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        ></circle>
+        <circle
+          cx="6"
+          cy="17"
+          r="2.3"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        ></circle>
+        <path
+          d="M8 8.5 18.5 3.8"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="1.8"
+        ></path>
+        <path
+          d="M8 15.5 18.5 20.2"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="1.8"
+        ></path>
+      </symbol>
+
+      <symbol id="icon-spark" viewBox="0 0 24 24">
+        <path
+          d="M12 3.2 13.8 8l4.8 1.8-4.8 1.8L12 16.4l-1.8-4.8L5.4 9.8 10.2 8 12 3.2Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        ></path>
+        <path
+          d="M18.5 15.5 19.3 17.7l2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        ></path>
+      </symbol>
+
+      <symbol id="icon-bag" viewBox="0 0 24 24">
+        <path
+          d="M6 8h12l-1 12H7L6 8Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        ></path>
+        <path
+          d="M9 8V7a3 3 0 0 1 6 0v1"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        ></path>
+      </symbol>
+
+      <symbol id="icon-grid" viewBox="0 0 24 24">
+        <rect
+          x="3.5"
+          y="3.5"
+          width="7"
+          height="7"
+          rx="1.4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        ></rect>
+        <rect
+          x="13.5"
+          y="3.5"
+          width="7"
+          height="7"
+          rx="1.4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        ></rect>
+        <rect
+          x="3.5"
+          y="13.5"
+          width="7"
+          height="7"
+          rx="1.4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        ></rect>
+        <rect
+          x="13.5"
+          y="13.5"
+          width="7"
+          height="7"
+          rx="1.4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        ></rect>
+      </symbol>
+
+      <symbol id="icon-receipt" viewBox="0 0 24 24">
+        <path
+          d="M7 3h10v18l-2.2-1.5L12 21l-2.8-1.5L7 21V3Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        ></path>
+        <path
+          d="M9.5 8h5"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="1.8"
+        ></path>
+        <path
+          d="M9.5 12h5"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="1.8"
+        ></path>
+        <path
+          d="M9.5 16h3.2"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="1.8"
+        ></path>
+      </symbol>
+
+      <symbol id="icon-chat" viewBox="0 0 24 24">
+        <path
+          d="M5 6.5A2.5 2.5 0 0 1 7.5 4h9A2.5 2.5 0 0 1 19 6.5v6A2.5 2.5 0 0 1 16.5 15H11l-4 4v-4H7.5A2.5 2.5 0 0 1 5 12.5v-6Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        ></path>
+        <path
+          d="M9 9.4h6"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="1.8"
+        ></path>
+        <path
+          d="M9 12.2h3.8"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="1.8"
+        ></path>
+      </symbol>
+
+      <symbol id="icon-phone" viewBox="0 0 24 24">
+        <path
+          d="M21 16.8v2.4a1.8 1.8 0 0 1-2 1.8A16.6 16.6 0 0 1 3 5a1.8 1.8 0 0 1 1.8-2H7.2A1.8 1.8 0 0 1 9 4.5l.5 3.3a1.8 1.8 0 0 1-.5 1.5l-1.6 1.6a14 14 0 0 0 5 5l1.6-1.6a1.8 1.8 0 0 1 1.5-.5l3.3.5A1.8 1.8 0 0 1 21 16.8Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+        ></path>
+      </symbol>
+    </svg>
+
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container header-row">
+          <a class="brand" href="#top" aria-label="Printflow home">
+            <span class="brand-mark">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="#icon-star"></use>
+              </svg>
+            </span>
+            <span class="brand-copy">
+              <strong>Printflow</strong>
+              <span>Custom apparel, from design to delivery</span>
+            </span>
+          </a>
+
+          <nav class="site-nav" aria-label="Primary">
+            <a href="#studio">Studio</a>
+            <a href="#gallery">Overview</a>
+            <a href="#drops">Premade</a>
+            <a href="#journey">Flow</a>
+            <a href="#support">Support</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" id="top">
+          <div class="container hero-layout">
+            <div class="hero-copy">
+              <p class="section-kicker">Custom apparel platform</p>
+              <h1>Create, shop, and track apparel in one flow.</h1>
+              <p class="hero-text">
+                Printflow brings custom design and ready-to-order products into
+                the same premium experience. Customers can build shirts with
+                text and artwork, browse premade drops, pay with confidence, and
+                follow every order through payment, production, shipping, and
+                delivery.
+              </p>
+
+              <div class="hero-actions">
+                <a class="button button-primary" href="#studio">
+                  Explore studio
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="#icon-arrow"></use>
+                  </svg>
+                </a>
+                <a class="button button-secondary" href="#drops"
+                  >Browse premade</a
+                >
+              </div>
+
+              <div class="hero-stats">
+                <div class="stat-card">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="#icon-shirt"></use>
+                  </svg>
+                  <div>
+                    <strong>Custom studio</strong>
+                    <span>Upload artwork, add text, preview both sides</span>
+                  </div>
+                </div>
+
+                <div class="stat-card">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="#icon-hanger"></use>
+                  </svg>
+                  <div>
+                    <strong>Premade drops</strong>
+                    <span>Ready-to-order apparel collections</span>
+                  </div>
+                </div>
+
+                <div class="stat-card">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="#icon-receipt"></use>
+                  </svg>
+                  <div>
+                    <strong>Order tracking</strong>
+                    <span>Payment, production, shipping, delivery</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-visual">
+              <div class="hero-card hero-card-large image-card">
+                <img
+                  src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80"
+                  alt="Editorial custom apparel presentation"
+                />
+                <div class="image-overlay">
+                  <span class="overlay-chip">Custom apparel</span>
+                  <h2>A premium storefront backed by a real order flow.</h2>
+                </div>
+              </div>
+
+              <div class="hero-card hero-card-small image-card">
+                <img
+                  src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80"
+                  alt="Folded premium apparel collection"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="brand-ribbon">
+          <div class="container ribbon-row">
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use href="#icon-shirt"></use></svg
+              ><span>Custom Studio</span>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use href="#icon-hanger"></use></svg
+              ><span>Premade Drops</span>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use href="#icon-bag"></use></svg
+              ><span>Secure Checkout</span>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use href="#icon-spark"></use></svg
+              ><span>WhatsApp Updates</span>
+            </div>
+            <div>
+              <svg class="icon" viewBox="0 0 24 24">
+                <use href="#icon-grid"></use></svg
+              ><span>Order Tracking</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="studio-section" id="studio">
+          <div class="container">
+            <div class="section-header">
+              <p class="section-kicker">Design studio</p>
+              <h2>
+                A custom-apparel workflow that feels clear from the first click.
+              </h2>
+              <p>
+                Printflow is not just a showcase. It is a working design studio
+                where customers choose a product, add text or artwork, adjust
+                placement, preview the result, and move into checkout without
+                leaving the experience.
+              </p>
+            </div>
+
+            <div class="studio-grid">
+              <article class="studio-panel studio-feature">
+                <div class="panel-top">
+                  <span class="panel-chip">Front + back preview</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="#icon-shirt"></use>
+                  </svg>
+                </div>
+
+                <div class="shirt-preview">
+                  <div class="shirt-body">
+                    <div class="shirt-print">
+                      <span class="shirt-print-top">PRINTFLOW</span>
+                      <span class="shirt-print-bottom">Studio Edition</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tool-row">
+                  <div class="tool-pill">
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <use href="#icon-spark"></use></svg
+                    ><span>Text editing</span>
+                  </div>
+                  <div class="tool-pill">
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <use href="#icon-grid"></use></svg
+                    ><span>Placement tools</span>
+                  </div>
+                  <div class="tool-pill">
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <use href="#icon-scissors"></use></svg
+                    ><span>Artwork upload</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="studio-panel image-panel">
+                <img
+                  src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=80"
+                  alt="Custom apparel collection on hangers"
+                />
+                <div class="image-panel-copy">
+                  <span>Custom apparel</span>
+                  <h3>
+                    From logo tees to graphic streetwear, the studio supports
+                    branded pieces.
+                  </h3>
+                </div>
+              </article>
+
+              <article class="studio-panel feature-list-panel">
+                <div class="feature-list-item">
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <use href="#icon-shirt"></use>
+                  </svg>
+                  <div>
+                    <strong>Front + back mockups</strong>
+                    <span>Preview both sides before placing the order.</span>
+                  </div>
+                </div>
+
+                <div class="feature-list-item">
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <use href="#icon-spark"></use>
+                  </svg>
+                  <div>
+                    <strong>Text + artwork tools</strong>
+                    <span
+                      >Add typography, upload graphics, and position every
+                      element cleanly.</span
+                    >
+                  </div>
+                </div>
+
+                <div class="feature-list-item">
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <use href="#icon-hanger"></use>
+                  </svg>
+                  <div>
+                    <strong>Size, variant, and checkout flow</strong>
+                    <span
+                      >Move from design to payment with fewer steps and less
+                      confusion.</span
+                    >
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section" id="gallery">
+          <div class="container">
+            <div class="section-header">
+              <p class="section-kicker">Platform overview</p>
+              <h2>Large visuals that explain the product at a glance.</h2>
+              <p>
+                The fashion imagery stays, but the message becomes clearer:
+                Printflow helps people create custom apparel, shop ready-made
+                products, and understand the experience before they ever reach
+                checkout.
+              </p>
+            </div>
+
+            <div class="gallery-grid">
+              <article class="gallery-card gallery-tall">
+                <img
+                  src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80"
+                  alt="Styled custom tee in an editorial setting"
+                />
+                <div class="gallery-copy">
+                  <span>Custom design</span>
+                </div>
+              </article>
+
+              <article class="gallery-card">
+                <img
+                  src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=900&q=80"
+                  alt="Rack of ready-to-order shirts in a boutique presentation"
+                />
+                <div class="gallery-copy">
+                  <span>Premade catalog</span>
+                  <h3>
+                    Ready-to-buy collections sit beside the custom studio, not
+                    in a disconnected flow.
+                  </h3>
+                </div>
+              </article>
+
+              <article class="gallery-card">
+                <img
+                  src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=900&q=80"
+                  alt="Folded apparel collection with premium styling"
+                />
+                <div class="gallery-copy">
+                  <span>Product presentation</span>
+                  <h3>
+                    Editorial imagery helps visitors understand quality and
+                    category before they shop.
+                  </h3>
+                </div>
+              </article>
+
+              <article class="gallery-card gallery-wide">
+                <img
+                  src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80"
+                  alt="Model wearing a streetwear tee from a premade collection"
+                />
+                <div class="gallery-copy">
+                  <span>Order confidence</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="drops-section" id="drops">
+          <div class="container">
+            <div class="section-header">
+              <p class="section-kicker">Premade catalog</p>
+              <h2>Ready-to-buy apparel lives beside the custom studio.</h2>
+              <p>
+                Some customers want to customize. Others want to buy
+                immediately. Printflow supports both by keeping premade
+                collections visible, polished, and easy to shop.
+              </p>
+            </div>
+
+            <div class="product-grid">
+              <article class="product-card">
+                <div class="product-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=900&q=80"
+                    alt="Black graphic tee in the premade catalog"
+                  />
+                  <span class="product-badge">Ready now</span>
+                </div>
+                <div class="product-copy">
+                  <div class="product-topline">
+                    <h3>Graphic Tee Drop</h3>
+                    <span>Best seller</span>
+                  </div>
+                  <p>
+                    Customers can jump straight into ready-made statement pieces
+                    without opening the design tool.
+                  </p>
+                  <a href="#">Browse drop</a>
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=80"
+                    alt="Oversized white tee from a premade collection"
+                  />
+                  <span class="product-badge">New arrival</span>
+                </div>
+                <div class="product-copy">
+                  <div class="product-topline">
+                    <h3>Oversized Essentials</h3>
+                    <span>Fresh launch</span>
+                  </div>
+                  <p>
+                    Oversized fits and seasonal releases can live in the same
+                    premium storefront as custom products.
+                  </p>
+                  <a href="#">View collection</a>
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=900&q=80"
+                    alt="Earth-tone basics displayed in a premade collection"
+                  />
+                  <span class="product-badge">Everyday pick</span>
+                </div>
+                <div class="product-copy">
+                  <div class="product-topline">
+                    <h3>Earth Tone Basics</h3>
+                    <span>Core line</span>
+                  </div>
+                  <p>
+                    Clean basics give the catalog a dependable everyday layer
+                    beside the custom offering.
+                  </p>
+                  <a href="#">Shop basics</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="journey-section" id="journey">
+          <div class="container journey-shell">
+            <div class="journey-copy">
+              <p class="section-kicker">How it works</p>
+              <h2>From first click to delivery, the flow stays simple.</h2>
+              <p>
+                Printflow has two clear paths: start with a custom product or
+                shop a premade piece. From there, checkout, updates, and
+                tracking stay easy to follow.
+              </p>
+            </div>
+
+            <div class="journey-list">
+              <article class="journey-item">
+                <span>01</span>
+                <div>
+                  <h3>Choose a route</h3>
+                  <p>
+                    Start in the custom studio or open the premade catalog right
+                    away.
+                  </p>
+                </div>
+              </article>
+
+              <article class="journey-item">
+                <span>02</span>
+                <div>
+                  <h3>Build or buy</h3>
+                  <p>
+                    Upload artwork, add text, pick a variant, or select a
+                    ready-made product and quantity.
+                  </p>
+                </div>
+              </article>
+
+              <article class="journey-item">
+                <span>03</span>
+                <div>
+                  <h3>Checkout clearly</h3>
+                  <p>
+                    Review the order, confirm address details, pay, and opt in
+                    to order updates without extra friction.
+                  </p>
+                </div>
+              </article>
+
+              <article class="journey-item">
+                <span>04</span>
+                <div>
+                  <h3>Track every update</h3>
+                  <p>
+                    Payment, production, shipping, and delivery are shown in one
+                    clean status flow.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="support-section" id="support">
+          <div class="container">
+            <div class="section-header">
+              <p class="section-kicker">Support + updates</p>
+              <h2>Help, updates, and tracking stay close to the order.</h2>
+              <p>
+                Printflow keeps support practical and visible, with direct
+                contact options and clear order status for both custom and
+                premade purchases.
+              </p>
+            </div>
+
+            <div class="support-grid">
+              <article class="support-card">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use href="#icon-chat"></use>
+                </svg>
+                <h3>WhatsApp updates</h3>
+                <p>
+                  Customers can receive order confirmation, payment, and
+                  delivery updates through WhatsApp.
+                </p>
+              </article>
+
+              <article class="support-card">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use href="#icon-phone"></use>
+                </svg>
+                <h3>Direct contact</h3>
+                <p>
+                  Phone: 8798117511<br />
+                  Gmail: printflow@gmail.com<br />
+                  Address: Full Nagarjan, Dimapur, Nagaland, 797112
+                </p>
+              </article>
+
+              <article class="support-card">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use href="#icon-receipt"></use>
+                </svg>
+                <h3>Order timeline</h3>
+                <p>
+                  Custom and premade orders both feed into a clearer status
+                  experience.
+                </p>
+              </article>
+
+              <article class="support-card">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <use href="#icon-bag"></use>
+                </svg>
+                <h3>Checkout clarity</h3>
+                <p>
+                  Address details, cart review, and final confirmation are
+                  handled in a cleaner purchase flow.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-row">
+          <p>
+            Printflow - custom apparel studio, premade catalog, and order
+            tracking.
+          </p>
+          <a href="#top">Back to top</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("is-loaded");
+
+        const revealTargets = document.querySelectorAll(`
+          .section-header,
+          .stat-card,
+          .hero-card,
+          .ribbon-row > div,
+          .studio-panel,
+          .gallery-card,
+          .product-card,
+          .journey-item,
+          .support-card,
+          .footer-row
+        `);
+
+        revealTargets.forEach((el, index) => {
+          el.classList.add("reveal");
+          el.style.setProperty("--reveal-delay", `${index * 40}ms`);
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.16,
+            rootMargin: "0px 0px -8% 0px",
+          },
+        );
+
+        revealTargets.forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>
