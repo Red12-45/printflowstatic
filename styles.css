@@ -131,7 +131,7 @@ img {
 }
 
 .page-shell {
-  overflow: clip;
+  overflow-x: hidden;
 }
 
 .container {
@@ -1134,10 +1134,6 @@ img {
 }
 
 .footer-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
   padding: 1.4rem 0;
   color: var(--text-dim);
   font-weight: 600;
@@ -1403,4 +1399,68 @@ body:not(.is-loaded) .hero-visual {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+.footer-row-legal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.9rem 1.25rem;
+  width: 100%;
+}
+
+.footer-links a {
+  display: inline-block;
+  color: var(--text);
+  opacity: 0.9;
+  font-weight: 600;
+  transition:
+    color 180ms ease,
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--gold-strong);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.policy-page {
+  min-height: 100vh;
+}
+
+.policy-shell {
+  max-width: 880px;
+  padding: 2rem;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: var(--shadow-xl);
+}
+
+.policy-shell h1 {
+  margin: 0 0 1rem;
+  font-family: "Clash Display", sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  letter-spacing: -0.04em;
+}
+
+.policy-shell h2 {
+  margin: 2rem 0 0.7rem;
+  font-size: 1.2rem;
+}
+
+.policy-shell p {
+  margin: 0.65rem 0;
+  color: var(--text-dim);
+  line-height: 1.8;
 }
